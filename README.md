@@ -53,6 +53,13 @@ Le jeton vit ici, dans la configuration — **jamais dans un prompt**.
 Chaque outil est plafonné et renvoie des agrégats : un agent bien orienté
 répond mieux qu'un agent noyé sous les données.
 
+## Prompt système
+
+Le serveur ne fait que fournir les données ; la qualité des réponses dépend
+surtout des instructions données à l'assistant. Un prompt éprouvé est fourni
+dans [PROMPT.md](PROMPT.md) — il couvre notamment la lecture des
+vulnérabilités et les limites des données.
+
 ## Limites
 
 - **Lecture seule** : le serveur n'émet que des GET, et un jeton `read` ne
