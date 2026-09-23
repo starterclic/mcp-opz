@@ -50,6 +50,10 @@ Le jeton vit ici, dans la configuration — **jamais dans un prompt**.
 | `historique(host_id, heures)` | CPU/RAM/disque, au plus 48 points |
 | `recommandations(severite, limite)` | les recommandations ouvertes |
 
+Et un **prompt** MCP : `revue_securite` — revue de sécurité du parc
+(surface exposée, CVE réellement exploitables, durcissement), avec les
+garde-fous d'un agent autonome.
+
 Chaque outil est plafonné et renvoie des agrégats : un agent bien orienté
 répond mieux qu'un agent noyé sous les données.
 

@@ -191,6 +191,17 @@ def main() -> None:
             rows = [r for r in rows if str(r.get("severity")) == severite]
         return [compact_reco(r) for r in rows[: max(1, min(int(limite), 50))]]
 
+    @mcp.prompt()
+    def revue_securite() -> str:
+        """Revue de sécurité du parc (surface exposée, CVE exploitables,
+        durcissement), avec les garde-fous d'un agent autonome."""
+        t = get("/insights/prompt-template", focus="security")
+        return t["system"] + "\n\n" + t["user_template"].replace(
+            "```json\n{context}\n```",
+            "Appelle d'abord l'outil `etat_du_parc`, puis `recommandations` "
+            "si besoin : ce sont tes seules données.",
+        )
+
     mcp.run()
 
 
